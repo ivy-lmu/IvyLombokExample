@@ -11,6 +11,15 @@ Append `-javaagent:/Use/your/path/.m2/repository/org/projectlombok/lombok/1.18.1
 which is located in your Axon Ivy Designer directory. Make sure you use your path to the Lombok Jar.
 
 ### Maven
-Set `export MAVEN_OPTS=-javaagent:/Use/your/path/.m2/repository/org/projectlombok/lombok/1.18.18/lombok-1.18.18.jar` before running maven commands.
+Set the `MAVEN_OPTS` environment variable in your terminal before running maven commands.
+
+Windows:
+`set MAVEN_OPTS=-javaagent:<YourLombokJarPath>`
+
+macOS:
+`export MAVEN_OPTS=-javaagent:<YourLombokJarPath>`
+
+Where `<YourLombokJarPath>` points to your local Lombok jar.
+
 Our [ci.yaml](https://github.com/ivy-lmu/IvyLombokExample/blob/1c96d3097c511c29b3c0b8c34c1a303507e1742a/.github/workflows/ci.yml#L22)
 also indicates how to use Maven and Lombok.
