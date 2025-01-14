@@ -9,17 +9,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - name: Setup Java JDK
       uses: actions/setup-java@v1.4.3
       with:
-        java-version: 11
+        java-version: 17
 
     - name: Build with Maven
       run: |
         curl https://repo1.maven.org/maven2/org/projectlombok/lombok/1.18.18/lombok-1.18.18.jar -o lombok.jar
-        export MAVEN_OPTS=-javaagent:lombok.jar
+        export MAVEN_OPTS="-javaagent:lombok.jar --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.invoke=ALL-UNNAMED"
         mvn clean verify --batch-mode ${{ inputs.mvnArgs }} ${{ secrets.mvnArgs }}
 
     - name: Publish Unit Test Results
@@ -31,7 +31,7 @@ jobs:
           !*/target/*-reports/failsafe-summary.xml
 
     - name: Archive build artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         path: |
           */target/*.iar

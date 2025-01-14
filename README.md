@@ -14,10 +14,10 @@ which is located in your Axon Ivy Designer directory. Make sure you use your pat
 Set the `MAVEN_OPTS` environment variable in your terminal before running maven commands.
 
 Windows:
-`set MAVEN_OPTS=-javaagent:<YourLombokJarPath>`
+`set MAVEN_OPTS="-javaagent:<YourLombokJarPath> --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.invoke=ALL-UNNAMED"`
 
 macOS:
-`export MAVEN_OPTS=-javaagent:<YourLombokJarPath>`
+`export MAVEN_OPTS="-javaagent:<YourLombokJarPath> --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.invoke=ALL-UNNAMED"`
 
 Where `<YourLombokJarPath>` points to your local Lombok jar.
 
