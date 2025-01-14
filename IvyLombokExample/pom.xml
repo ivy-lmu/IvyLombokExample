@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>ivy.lombok.example</groupId>
   <artifactId>ivy-lombok-example</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>iar</packaging>
-
   <dependencies>
     <dependency>
       <groupId>org.projectlombok</groupId>
@@ -14,15 +14,13 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
-
   <build>
     <plugins>
       <plugin>
         <groupId>com.axonivy.ivy.ci</groupId>
         <artifactId>project-build-plugin</artifactId>
-        <version>9.3.1</version>
+        <version>10.0.14</version>
         <extensions>true</extensions>
-
         <configuration>
           <compilerOptions>
             <compilerOption>-proc:none</compilerOption>
@@ -30,7 +28,6 @@
             <!-- Lombok annotationProcessing can't work with Eclipse JDT compiler https://github.com/projectlombok/lombok/blob/master/src/core/lombok/core/AnnotationProcessor.java#L199 -->
           </compilerOptions>
         </configuration>
-
       </plugin>
     </plugins>
   </build>

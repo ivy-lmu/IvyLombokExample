@@ -5,7 +5,7 @@
 			<attribute name="optional" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry excluding="**/*.ivyClass|**/*.mod|**/*.rddescriptor|**/*.xhtml" kind="src" path="src_hd">
+	<classpathentry excluding="**/*.ivyClass|**/*.p.json|**/*.rddescriptor|**/*.xhtml" kind="src" path="src_hd">
 		<attributes>
 			<attribute name="optional" value="true"/>
 		</attributes>
